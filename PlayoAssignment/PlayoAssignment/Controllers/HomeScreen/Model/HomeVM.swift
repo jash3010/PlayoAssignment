@@ -28,7 +28,7 @@ class HomeVM {
     
     func makeRequest() async -> [Article]{
         
-        let url = ""
+        let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=63265685637341b2a1687b8eb836ad66"
         guard let apiURL = URL(string: url) else { return []}
         
         do {
@@ -36,11 +36,9 @@ class HomeVM {
             let modelData = try JSONDecoder().decode(NewsDataModel.self, from: data)
             return modelData.articles
         }catch{
-            
+            return []
         }
     }
-
-
 
 }
 

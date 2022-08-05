@@ -10,7 +10,7 @@ import UIKit
 class HomeVC: UIViewController {
 
     static func storyboardInstance() -> UINavigationController {
-        return UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigation") as! UINavigationController
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigation") as! UINavigationController
     }
     
     lazy var mainView: HomeView = {
