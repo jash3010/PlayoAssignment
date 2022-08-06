@@ -32,9 +32,11 @@ class HomeVM {
         guard let apiURL = URL(string: url) else { return []}
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: apiURL)
+            let urlRequest = URLRequest(url: apiURL)
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
             let modelData = try JSONDecoder().decode(NewsDataModel.self, from: data)
-            return modelData.articles
+            print(modelData)
+            return modelData.articles ?? []
         }catch{
             return []
         }
@@ -44,19 +46,19 @@ class HomeVM {
 
 // MARK: - NewsDataModel
 struct NewsDataModel: Codable {
-    let status: String
-    let totalResults: Int
-    let articles: [Article]
+    let status: String?
+    let totalResults: Int?
+    let articles: [Article]?
 }
 
 // MARK: - Article
 struct Article: Codable {
-    let source: Source
-    let author, title, articleDescription: String
-    let url: String
-    let urlToImage: String
-    let publishedAt: Date
-    let content: String
+    let source: Source?
+    let author, title, articleDescription: String?
+    let url: String?
+    let urlToImage: String?
+    let publishedAt: String?
+    let content: String?
 
     enum CodingKeys: String, CodingKey {
         case source, author, title
@@ -67,8 +69,8 @@ struct Article: Codable {
 
 // MARK: - Source
 struct Source: Codable {
-    let id: String
-    let name: String
+    let id: String?
+    let name: String?
     
     enum CodingKeys: String, CodingKey {
         case id  = "techcrunch"

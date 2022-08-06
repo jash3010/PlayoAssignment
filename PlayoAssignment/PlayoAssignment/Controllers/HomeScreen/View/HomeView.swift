@@ -12,7 +12,7 @@ class HomeView: UIView {
     @IBOutlet weak var newsListTBL: UITableView!
     
     func setUpView(_ vc: UIViewController){
-        vc.navigationController?.title = "Headlines"
+        vc.navigationItem.title = "Headlines"
         newsListTBL.register(UINib(nibName: "NewsListTBLCell", bundle: nil), forCellReuseIdentifier: "NewsListTBLCell")
     }
 

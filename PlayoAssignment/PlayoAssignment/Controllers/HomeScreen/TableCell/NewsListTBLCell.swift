@@ -9,6 +9,10 @@ import UIKit
 
 class NewsListTBLCell: UITableViewCell {
 
+    @IBOutlet weak var newsIMGView: UIImageView!
+    @IBOutlet weak var newsTitleLBL: UILabel!
+    @IBOutlet weak var newsAuthorLBL: UILabel!
+    @IBOutlet weak var descriptionLBL: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +24,9 @@ class NewsListTBLCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setUpView(data: Article){
+        newsTitleLBL.text = data.title
+        newsAuthorLBL.text = data.author
+        descriptionLBL.text = data.articleDescription
+    }
 }
