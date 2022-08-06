@@ -43,6 +43,40 @@
             </objects>
             <point key="canvasLocation" x="711.59420289855075" y="79.6875"/>
         </scene>
+        <!--Details WebVC-->
+        <scene sceneID="wK0-Ma-kfn">
+            <objects>
+                <viewController restorationIdentifier="DetailsWebVC" storyboardIdentifier="DetailsWebVC" id="Ydf-Ib-Gxy" customClass="DetailsWebVC" customModule="PlayoAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03j-6u-Gs9" customClass="DetailsWebView" customModule="PlayoAssignment" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sy6-iy-TOc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dmk-AB-dRi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sy6-iy-TOc" secondAttribute="bottom" id="BFW-q6-mfm"/>
+                            <constraint firstItem="dmk-AB-dRi" firstAttribute="trailing" secondItem="Sy6-iy-TOc" secondAttribute="trailing" id="Uzo-6s-Yng"/>
+                            <constraint firstItem="Sy6-iy-TOc" firstAttribute="top" secondItem="dmk-AB-dRi" secondAttribute="top" id="Xfy-zl-iVx"/>
+                            <constraint firstItem="Sy6-iy-TOc" firstAttribute="leading" secondItem="dmk-AB-dRi" secondAttribute="leading" id="bFG-hw-v1T"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="detailsWebView" destination="Sy6-iy-TOc" id="3TA-YQ-hIZ"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5o-2s-NqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="80"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="j49-CU-tao">
             <objects>

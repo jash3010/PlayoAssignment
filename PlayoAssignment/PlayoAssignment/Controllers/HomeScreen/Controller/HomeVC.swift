@@ -25,13 +25,21 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
 
         mainView.setUpView(self)
-        Task{
-            await mainViewModel.getNewsData()
-            mainView.newsListTBL.reloadData()
-        }
-        
+        mainView.refreshControl.addTarget(self, action: #selector(self.refreshData(_:)), for: .valueChanged)
+        getDataFromURL()
     }
     
+    func getDataFromURL(){
+        Task{
+            await mainViewModel.getNewsData()
+            mainView.refreshControl.endRefreshing()
+            mainView.newsListTBL.reloadData()
+        }
+    }
+    
+    @objc func refreshData(_ sender: AnyObject) {
+        getDataFromURL()
+    }
     
 
 }

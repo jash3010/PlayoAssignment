@@ -28,5 +28,6 @@ class NewsListTBLCell: UITableViewCell {
         newsTitleLBL.text = data.title
         newsAuthorLBL.text = data.author
         descriptionLBL.text = data.articleDescription
+        newsIMGView.imageFromServerURL(data.urlToImage ?? "", placeHolder: UIImage(named: "placehoderIMG"))
     }
 }
